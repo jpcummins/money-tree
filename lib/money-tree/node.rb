@@ -147,6 +147,12 @@ module MoneyTree
       to_serialized_base58 address
     end
 
+    def to_bech32_address(network: :bitcoin)
+      hrp = NETWORKS[network][:human_readable_part]
+      witprog = to_identifier
+      to_serialized_bech32(hrp, witprog)
+    end
+
     def subnode(i = 0, opts = {})
       if private_key.nil?
         child_public_key, child_chain_code = derive_public_key(i)
