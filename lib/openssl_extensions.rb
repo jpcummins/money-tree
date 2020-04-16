@@ -7,6 +7,7 @@ module MoneyTree
   module OpenSSLExtensions
     extend FFI::Library
     ffi_lib [
+      'libssl.1.0.0',
       'libssl.so.1.1.0', 'libssl.so.1.1',
       'libssl.so.1.0.0', 'libssl.so.10',
       'ssl'
