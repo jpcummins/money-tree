@@ -258,6 +258,12 @@ module MoneyTree
       convert_p2wpkh_p2sh(to_hex, prefix)
     end
 
+    def to_bech32_address(network: :bitcoin)
+      hrp = NETWORKS[network][:human_readable_part]
+      witprog = to_ripemd160
+      to_serialized_bech32(hrp, witprog)
+    end
+
     def to_fingerprint
       hash = to_ripemd160
       hash.slice(0..7)

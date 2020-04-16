@@ -14,7 +14,8 @@ module MoneyTree
           extended_pubkey_version: "0488b21e",
           compressed_wif_chars: %w(K L),
           uncompressed_wif_chars: %w(5),
-          protocol_version: 70001
+          protocol_version: 70001,
+          human_readable_part: "bc"
         },
         bitcoin_testnet: {
           address_version: '6f',
@@ -26,7 +27,8 @@ module MoneyTree
           extended_pubkey_version: "043587cf",
           compressed_wif_chars: %w(c),
           uncompressed_wif_chars: %w(9),
-          protocol_version: 70001
+          protocol_version: 70001,
+          human_readable_part: "tb"
         }
       )
       hsh[:testnet3] = hsh[:bitcoin_testnet]
